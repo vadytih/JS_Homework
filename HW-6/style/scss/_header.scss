@@ -1,0 +1,77 @@
+.header {
+    width: 100%;
+    background-color: #2d313d;
+    display: flex;
+    color: $text-grey;
+    
+    &__wrapper {
+        height: 59px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+        }
+
+        &__logo {
+            
+            &_img {
+                margin: 18px 0 18px 6px;
+                width: 32px;
+                height: 20px;
+            }
+        }
+
+        &__box-cont {
+            display: flex;
+            align-items: center;
+            font: 14px Arial;
+        }
+
+        &__box-cont li + li {
+            margin-left: 32px;
+        }
+
+        &__city {
+
+            &_link {
+                color: $text-grey;
+                text-decoration: none;
+                border-bottom: 1px dashed;
+            }
+        }
+
+        &__bell {
+
+        }
+
+        &__envelope {
+
+        }
+
+        &__user-account {
+
+            &_link {
+                display: flex;
+                align-items: center;
+                color: $text-grey;
+                text-decoration: none; 
+            }
+        
+            &_name {
+        
+            }
+        
+            &_avatar {
+                width: 30px;
+                height: 30px;
+                margin-left: 10px;
+            }
+        }
+
+        &__search {
+            padding-right: 5px;
+        }
+
+}
+
+
+

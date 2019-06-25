@@ -1,0 +1,44 @@
+.footer {
+    background: none;
+
+    &__wrapper {
+        margin-left: 170px;
+        color: #99a1b3;
+        font: 12px Arial;
+        padding: 0 28px 0;
+        background-color: #f2f4f8;
+        margin-top: -85px;
+    }
+
+    &__nav {
+
+        &_wrapper {
+            display: flex;
+        }
+
+        &_wrapper li + li {
+            margin-left: 18px;
+        }
+
+        &_link {
+            text-decoration: none;
+            color: #99a1b3;
+            line-height: 42px;
+        }
+    }
+
+    &__copy {
+        display: flex;
+        align-items: center;
+
+        &_logo {
+            margin-right: 10px;
+        }
+        
+        &_text {
+            padding: 14px 0 14px;
+        }
+    }
+
+    
+}

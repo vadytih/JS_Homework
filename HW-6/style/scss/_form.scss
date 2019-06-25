@@ -1,0 +1,33 @@
+.form {
+    background-color: #f2f4f8;
+    padding: 5px 30px;
+    color: #99a1b3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & input[type="text"] {
+        padding: 1px 10px;
+        outline: none;
+        font: 14px Arial;
+        width: 280px;
+        height: 40px;
+        border: solid #d6d9e1 1px;
+        border-radius: 5px;
+        display: inline-block;
+        background: url('/imag/search.png') no-repeat 250px 9px;
+        background-color: rgba(0, 0, 0, 0);
+        background-color: white;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        &_text {
+            margin-right: 86px;
+            font: 12px Georgia;
+        }
+    }
+}

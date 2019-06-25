@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.box {
+    width: 100vw;
+    height: 100vh;
+    background: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    transition: .5s;
+
+    & ul {
+        position: relative;
+        
+        & li{
+            list-style: none;
+
+            & a {
+                text-decoration: none;
+                color: #ffffff;
+                font-size: 40px;
+                text-transform: uppercase;
+                font-family: sans-serif;
+                padding: 10px 0;
+                display: flex;
+                transition: .5s;
+                letter-spacing: 5px;
+
+                &:hover {
+                    color: orange;
+                    &::before {
+                        opacity: .2;
+                        top: 50%;
+                    }
+                    
+                }
+
+                &:before {
+                    content: attr(data-text);
+                    position: absolute;
+                    top:0;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: block;
+                    height: 150px;
+                    color: #ffffff;
+                    font-family: initial;
+                    transition: .5s;
+                    font-size: 80px;
+                    pointer-events: none;
+                    opacity: 0;
+                }
+
+            }
+        }
+    }
+
+    &.activ {
+        top:0;
+    }
+}
+
+//БУРГЕР
+
+.icon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    z-index: 99;
+
+}
+
+.burger {
+    width: 30px;
+    height: 3px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s;
+}
+
+.burger::before,
+.burger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background: white;
+    position: absolute;
+    transition: .5s;
+}
+
+.burger::before {
+    top: -15px;
+}
+
+.burger::after {
+    top: 15px;
+}
+
+.icon.activ .burger {
+    background: rgba(0, 0, 0, 0);
+}
+
+.icon.activ .burger::before {
+    transform: rotate(135deg);
+    top: 0;
+}
+
+.icon.activ .burger::after {
+    transform: rotate(45deg);
+    top: 0;
+}

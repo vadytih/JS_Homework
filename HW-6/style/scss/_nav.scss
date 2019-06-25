@@ -1,0 +1,38 @@
+.nav {
+    width: 100%;
+    background-color: #646d81;
+    font: 14px Arial;
+
+    &__wrapper {
+        height: 41px;
+    }
+    
+    &__items {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__items li + li {
+        margin-left: 26px;
+    }
+    
+    &__item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        &_link {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 8px 0 12px;
+            border-top: 5px solid #646d81;
+        }
+
+        &_link:hover {
+            border-top-color: #ffffff;
+            transition-duration: 0.3s;
+        }
+    }
+
+}

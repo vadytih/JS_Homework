@@ -1,3 +1,4 @@
+
 var wrapper = document.querySelector('.wrapper');
 var buttonStart = wrapper.querySelector('.js-button');
 var mSec = document.querySelector('.js-mSec');
@@ -25,7 +26,7 @@ window.addEventListener('load', function () {
 
     if (+localStorage.getItem('clicked')) {
         buttonReset.innerHTML = '<button class="button button__reset">Reset</button>';
-        buttonRevers.innerHTML = '<button class="button button__revers">Rvers</button>';
+        buttonRevers.innerHTML = '<button class="button button__revers">Revers</button>';
         buttonSave.innerHTML = '<button class="button button__save">Save</button>';
     };
 
@@ -123,8 +124,7 @@ function timeRevers(){
             if (sec.value < '00'){
                 sec.value = 59;
                 min.value--;
-
-                if (min.value.length < 2) {
+if (min.value.length < 2) {
                     min.value = '0' + min.value;
                 };
             };
@@ -138,7 +138,7 @@ function timeRevers(){
 buttonStart.addEventListener('click', function() {
     localStorage.setItem('clicked', 1);
     buttonReset.innerHTML = '<button class="button button__reset">Reset</button>';
-    buttonRevers.innerHTML = '<button class="button button__revers">Revers</button>';
+    buttonRevers.innerHTML = '<button class="button button__revers" data-text="On">Revers</button>';
     buttonSave.innerHTML = '<button class="button button__save">Save</button>';
     buttonSave.removeAttribute('hidden');
     buttonReset.removeAttribute('hidden');
@@ -169,19 +169,19 @@ buttonStart.addEventListener('click', function() {
     };
 });
 
-buttonRevers.addEventListener('click', function () {
+buttonRevers.addEventListener('click', function (e) {
     localStorage.setItem('clickedRevers', 1);
 
-    if (buttonRevers.dataset.text == 'On') {
-        buttonRevers.textContent = 'Revers OFF';
-        buttonRevers.dataset.text = 'Revers OFF';
+    if (e.target.dataset.text == 'On') {
+        e.target.textContent = 'Revers OFF';
+        e.target.dataset.text = 'Revers OFF';
         // localStorage.setItem('button', 'Pause');
         localStorage.setItem('buttonRevers', 'off');
         timeRevers();
 
-    } else if (buttonRevers.dataset.text == 'Off') {
-        buttonRevers.textContent = 'Revers On';
-        buttonRevers.dataset.text = 'Revers On';
+    } else if (e.target.dataset.text == 'Off') {
+        e.target.textContent = 'Revers On';
+        e.target.dataset.text = 'Revers On';
         localStorage.setItem('revers', 'On');
 
         setTimeout(function time() {
